@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;600&family=Outfit:wght@300;400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-blue: #00e5ff;
+  --neon-pink: #ff007a;
+  --neon-orange: #ff5a00;
+  --cyber-bg: #050308;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: var(--neon-blue);
+  color: #000;
+}
+
+body {
+  background-color: var(--cyber-bg);
+  color: #e5e5e5;
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+  cursor: none; 
+}
+
+h1, h2, h3, h4, .font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.glass-panel {
+  background: rgba(18, 11, 24, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.neon-glow {
+  box-shadow: 0 0 15px var(--neon-blue), 0 0 30px rgba(0, 229, 255, 0.2);
+}
+
+.neon-text {
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.cyber-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050308;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--neon-blue), var(--neon-pink));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+/* Animations */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s infinite ease-in-out;
+}
+
+/* Hide default cursor for standard global glow effect */
+a, button, input, textarea {
+    cursor: none;
+}
